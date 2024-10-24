@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const axios = require('axios');
 const _4devs = require('@killovsky/4devs');
-
+const IndicacaoCode = "RLNCI4";
 // Função para gerar e-mail temporário usando 1secmail
 async function getTempEmail() {
   const domain = '1secmail.com';
@@ -65,7 +65,7 @@ function extractLinks(body) {
       await page.fill('input[name="CPF"]', data.dados[0].cpf);
       await page.fill('input[name="Password"]', data.dados[0].senha);
       await page.fill('input[name="ConfirmPassword"]', data.dados[0].senha);
-      await page.fill('input[name="AMIGOINDICA_EMAIL_CAMARA"]', 'RLNCI4');
+      await page.fill('input[name="AMIGOINDICA_EMAIL_CAMARA"]', IndicacaoCode);
       await page.check('input[name="Term"]');
       await page.waitForTimeout(2000);
 
